@@ -4,7 +4,7 @@ const refs = {
   body: document.querySelector('body'),
 };
 
-refs.stopBtn.disabled = true;
+refs.stopBtn.setAttribute('disabled', true);
 refs.startBtn.addEventListener('click', startNewBgColorBody);
 refs.stopBtn.addEventListener('click', stopNewBgColorBody);
 
@@ -16,12 +16,12 @@ function startNewBgColorBody() {
   currentColor = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  refs.startBtn.disabled = true;
-  refs.stopBtn.disabled = false;
+  refs.startBtn.setAttribute('disabled', true);
+  refs.stopBtn.setAttribute('disabled', false);
 }
 
 function stopNewBgColorBody() {
-  refs.startBtn.disabled = false;
-  refs.stopBtn.disabled = true;
+  refs.startBtn.setAttribute('disabled', false);
+  refs.stopBtn.setAttribute('disabled', true);
   clearInterval(currentColor);
 }
