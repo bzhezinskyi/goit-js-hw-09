@@ -6,23 +6,7 @@ const flatpickr = require('flatpickr');
 
 let timerDeadline = null;
 
-// const options = {
-//   enableTime: true,
-//   time_24hr: true,
-//   defaultDate: new Date(),
-//   minuteIncrement: 1,
-//   onClose(selectedDates) {
-//     timerDeadline = selectedDates[0].getTime();
-//     if (timerDeadline < Date.now()) {
-//       Notiflix.Notify.failure('Please choose a date in the future');
-//       btnStartRef.setAttribute('disabled', true);
-//     } else {
-//       btnStartRef.toggleAttribute('disabled');
-//     }
-//   },
-// };
-
-flatpickr('#datetime-picker', {
+const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -36,7 +20,10 @@ flatpickr('#datetime-picker', {
       btnStartRef.toggleAttribute('disabled');
     }
   },
-});
+};
+
+flatpickr('#datetime-picker', options);
+console.log('flatpickr', flatpickr);
 
 const btnStartRef = document.querySelector('[data-start]');
 btnStartRef.setAttribute('disabled', false);
