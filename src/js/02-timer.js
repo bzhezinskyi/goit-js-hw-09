@@ -22,7 +22,8 @@ const options = {
   },
 };
 
-flatpickr('#datetime-picker', options);
+flatpickr('#datetime-picker', {});
+
 console.log('flatpickr', flatpickr);
 
 const btnStartRef = document.querySelector('[data-start]');
