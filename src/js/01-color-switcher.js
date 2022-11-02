@@ -3,6 +3,7 @@ const refs = {
   stopBtn: document.querySelector('[data-stop]'),
   body: document.querySelector('body'),
 };
+let currentColor;
 
 refs.stopBtn.disabled = true;
 refs.startBtn.addEventListener('click', startNewBgColorBody);
@@ -11,8 +12,6 @@ refs.stopBtn.addEventListener('click', stopNewBgColorBody);
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-
-let currentColor;
 
 function startNewBgColorBody() {
   currentColor = setInterval(() => {
