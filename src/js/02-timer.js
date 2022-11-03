@@ -2,8 +2,6 @@ import Notiflix from 'notiflix';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
-// const flatpickr = require('flatpickr');
-
 let timerDeadline = null;
 
 const options = {

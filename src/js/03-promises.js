@@ -27,12 +27,10 @@ function startPromis() {
   let deleyTime = Number(refs.deley.value);
 
   for (let i = 1; i <= refs.amount.value; i += 1) {
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        createPromise(i, time);
-        time += Number(refs.step.value);
-      }, deleyTime);
-      deleyTime += Number(refs.step.value);
-    });
+    setTimeout(() => {
+      createPromise(i, time);
+      time += Number(refs.step.value);
+    }, deleyTime);
+    deleyTime += Number(refs.step.value);
   }
 }
